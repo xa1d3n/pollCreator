@@ -1,0 +1,9 @@
+<!--<div class="form-group">
+	<h1> {{ poll.question }} </h1>
+  <div ng-repeat="option in poll.options" style="width :100%">
+    <p>{{ option.name }}</p>
+    <div class="voteCounts" style="width: {{ option.votes / poll.totalVotes * 100 }}%">{{ option.votes }}</div>
+  </div>
+
+
+</div> --><p>{{alreadyVotedMsg}}</p><table class="table"><caption class="tableCaption">{{poll.question}}</caption><tfoot><tr><td class="totalVotes">TOTAL VOTES<td>&nbsp;<td>&nbsp;<td class="totalVotes">{{poll.totalVotes}}<tbody><tr ng-repeat="option in poll.options"><td style="width: 45%">{{ option.name }}<td ng-show="option.votes < 1" style="width: 5%">0.00%<td ng-show="option.votes > 0" style="width: 5%">{{ option.votes / poll.totalVotes * 100 | number:2 }}%<td style="width: 45%"><div class="progress"><div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ option.votes / poll.totalVotes * 100 }}%"></div></div><td style="width: 5%">{{ option.votes }}</table>
