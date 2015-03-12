@@ -2,7 +2,6 @@
 
 angular.module('pollingAppApp')
   .controller('NavCtrl', function ($scope, PollsService) {
-    //$scope.id = $routeParams.id;
 
     var promise = PollsService.getRandomPoll();
 
